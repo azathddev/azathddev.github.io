@@ -1,0 +1,75 @@
+<html lang="ru">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <p id="names" onclick="change_color('name');">Имя: </p>
+    <p id="surname" onclick="change_color('surname');">Фамилия: </p>
+    <p id="age" onclick="change_color('age');">Возраст: </p>
+    <p id="male" onclick="change_color('male');">Пол: </p>
+    <img id="pic" onclick="alert('Это картинка!')" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYOmRx1qsg4EcHnjYgnzkyzwnQXB_RBwy0X7vbh3Q&s" alt="" width="300">
+<script type="text/javascript">
+
+        let namesIn = prompt("Введите ваше имя");
+        let surnameIn = prompt("Введите вашу фамилию");
+        let ageIn = prompt("Введите ваш возраст");
+        let maleIn = prompt("Введите ваш пол");
+
+        names.innerText = names.innerText + namesIn;
+        surname.innerText = surname.innerText + surnameIn;
+        age.innerText = age.innerText + ageIn;
+        male.innerText = male.innerText + maleIn;
+        var color = new Array("Red", "Yellow", "Green", "LightBlue", "Blue","Purple");
+        var num_name = 0;
+        var num_surname = 0;
+        var num_age = 0;
+        var num_male = 0;
+
+        function change_color() {
+                document.body.style.backgroundColor = color[num_name];
+                num_name++;
+                if (num_name == color.length) {
+                    num_name = 0;
+                }
+            if(type == "surname") {
+                surname.style.backgroundColor = color[num_surname];
+                num_surname++;
+                if (num_surname == color.length) {
+                    num_surname = 0;
+                }
+            }
+            if(type == "age") {
+                age.style.backgroundColor = color[num_age];
+                num_age++;
+                if (num_age == color.length) {
+                    num_age = 0;
+                }
+            }
+            if(type == "male") {
+                male.style.backgroundColor = color[num_male];
+                num_male++;
+                if (num_male == color.length) {
+                    num_male = 0;
+                }
+            }
+        }
+        function change_pic1() {
+            pic.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwzX2rhIuIDiyVPNvnlOmB-VadR--OGUgsl9vaIGs&s";
+        }
+
+        function change_pic2() {
+            pic.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYOmRx1qsg4EcHnjYgnzkyzwnQXB_RBwy0X7vbh3Q&s";
+        }
+        document.body.onmousemove = change_color;
+        pic.onmouseover = change_pic1;
+        pic.onmouseout = change_pic2;
+
+
+    
+        
+        
+    </script>
+    
+</body>
+</html>
